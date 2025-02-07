@@ -133,7 +133,7 @@
         android:layout_width="36dp"
         android:layout_height="48dp"
         android:gravity="center_vertical"
-        android:text="@string/_999"
+        android:text="999"
         android:textColor="@color/gray"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/shareButton"
