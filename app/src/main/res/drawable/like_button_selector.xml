@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Состояние, когда кнопка нажата (лайкнутый) -->
+    <item android:state_selected="true" android:drawable="@color/red" />
+    <!-- Обычное состояние (не лайкнуто) -->
+    <item android:drawable="@color/gray" />
+</selector>
