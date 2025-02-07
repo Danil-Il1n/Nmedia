@@ -1,5 +1,6 @@
 package ru.netology.nmedia
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private var likeCount = 0
     private var isLiked = false
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -48,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setLikeState(button: ImageButton, textView: TextView, liked: Boolean) {
         val color = if (liked) R.color.red else R.color.gray
         button.setColorFilter(ContextCompat.getColor(this, color))
