@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/post_avatar_drawable"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:srcCompat="@sample/posts.json/data/authorAvatar" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
         android:id="@+id/author"
@@ -25,15 +25,15 @@
         android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:maxLines="1"
+        android:text="@string/author"
         app:layout_constraintBottom_toTopOf="@id/published"
         app:layout_constraintStart_toEndOf="@+id/authorAvatar"
         app:layout_constraintTop_toTopOf="@+id/authorAvatar"
         app:layout_constraintVertical_chainStyle="spread_inside"
-        tools:ignore="MissingConstraints"
-        tools:text="@sample/posts.json/data/author" />
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/menu"
+        android:id="@+id/menuButton"
         android:layout_width="32dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -50,28 +50,28 @@
         android:layout_width="292dp"
         android:layout_height="21dp"
         android:layout_marginStart="16dp"
+        android:text="@string/published"
         app:layout_constraintBottom_toBottomOf="@+id/authorAvatar"
         app:layout_constraintStart_toEndOf="@+id/authorAvatar"
         app:layout_constraintTop_toBottomOf="@+id/author"
-        tools:ignore="MissingConstraints"
-        tools:text="@sample/posts.json/data/published" />
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="authorAvatar,published,menu" />
+        app:constraint_referenced_ids="authorAvatar,published,menuButton" />
 
     <TextView
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoLink="web"
+        android:text="@string/content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/authorAvatar"
-        tools:ignore="MissingConstraints"
-        tools:text="@sample/posts.json/data/content" />
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"

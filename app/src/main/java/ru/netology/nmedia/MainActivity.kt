@@ -25,10 +25,7 @@ class MainActivity : AppCompatActivity() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
+                systemBars.left, systemBars.top, systemBars.right, systemBars.bottom
             )
             insets
         }
@@ -85,8 +82,7 @@ class MainActivity : AppCompatActivity() {
     private fun saveLikeState() {
         val prefs = getSharedPreferences("prefs", MODE_PRIVATE)
         with(prefs.edit()) {
-            putInt("like_count", likeCount.toInt()).
-            putBoolean("is_liked", isLiked)
+            putInt("like_count", likeCount.toInt()).putBoolean("is_liked", isLiked)
             apply()
         }
     }
