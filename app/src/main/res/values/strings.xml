@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">NMedia</string>
     <string name="nmedia">NMedia</string>
+    <string name="likeCount">0</string>
+    <string name="shareCount">0</string>
+    <string name="visibilityText">0</string>
 </resources>

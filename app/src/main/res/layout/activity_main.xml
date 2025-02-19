@@ -110,7 +110,7 @@
         android:layout_height="48dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Share Button"
-        app:layout_constraintEnd_toStartOf="@id/shareText"
+        app:layout_constraintEnd_toStartOf="@id/shareCount"
         app:layout_constraintStart_toEndOf="@+id/likeCount"
         app:layout_constraintTop_toBottomOf="@+id/content"
         app:srcCompat="@drawable/share_24dp_e8eaed_fill0_wght400_grad0_opsz24"
@@ -118,22 +118,23 @@
         tools:ignore="ContentDescription,HardcodedText" />
 
     <TextView
-        android:id="@+id/shareText"
+        android:id="@+id/shareCount"
         android:layout_width="36dp"
         android:layout_height="48dp"
         android:gravity="center_vertical"
-        android:text="0"
+        android:text="@string/shareCount"
         android:textColor="@color/gray"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/shareButton"
-        app:layout_constraintTop_toBottomOf="@+id/content" />
+        app:layout_constraintTop_toBottomOf="@+id/content"
+        tools:ignore="HardcodedText"/>
 
     <TextView
         android:id="@+id/likeCount"
         android:layout_width="36dp"
         android:layout_height="48dp"
         android:gravity="center_vertical"
-        android:text="999"
+        android:text="@string/likeCount"
         android:textColor="@color/gray"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/shareButton"
@@ -160,7 +161,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="0dp"
         android:gravity="center"
-        android:text="100КК"
+        android:text="@string/visibilityText"
         android:textColor="@color/gray"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
