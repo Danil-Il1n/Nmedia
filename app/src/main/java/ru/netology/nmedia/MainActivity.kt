@@ -9,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.math.floor
 
 
 class MainActivity : AppCompatActivity() {
-    private var likeCount: Double = 999.0
+    private var likeCount: Double = 0.0
     private var isLiked = false
-    private var shareCount: Double = 1_099_999.0
+    private var shareCount: Double = 0.0
     private var isShared = false
 
     @SuppressLint("SetTextI18n")
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             saveLikeState()
         }
         val prefsShare = getSharedPreferences("prefsShare", MODE_PRIVATE)
-        shareCount = prefsShare.getInt("share_count", 0).toDouble()
+        shareCount = prefsShare.getInt("share_count", 2260).toDouble()
         isShared = prefsShare.getBoolean("is_shared", true)
 
         shareCountText.text = shareCount.toString()
@@ -104,15 +105,33 @@ class MainActivity : AppCompatActivity() {
 
 @SuppressLint("SetTextI18n", "DefaultLocale")
 fun updateNum(number: Double): String {
+    val delMillion = 1_000_000.0
+    val delThousand = 1_000.0
     return when {
-        number >= 1_000_000_000.0 && number < 1_100_000_000.0 -> String.format("%.0fB", number / 1_000_000_000.0)
-        number >= 1_100_000_000.0 -> String.format("%.1fB", number / 1_000_000_000.0)
 
-        number >= 1_000_000.0 && number < 1_100_000.0 -> String.format("%.0fM", number / 1_000_000.0)
-        number >= 1_100_000.0 -> String.format("%.1fM", number / 1_000_000.0)
+        number >= 10_000_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 9_000_000.0 && number < 9_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 8_000_000.0 && number < 8_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 7_000_000.0 && number < 7_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 6_000_000.0 && number < 6_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 5_000_000.0 && number < 5_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 4_000_000.0 && number < 4_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 3_000_000.0 && number < 3_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 2_000_000.0 && number < 2_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 1_000_000.0 && number < 1_100_000.0 -> String.format("%.0fM", floor(number / delMillion))
+        number >= 1_100_000.0 -> String.format("%.1fM", floor((number * 10) / delMillion) / 10)
 
-        number >= 1_000.0 && number < 1_100.0 -> String.format("%.0fK", number / 1_000.0)
-        number >= 1_100.0 -> String.format("%.1fK", number / 1_000.0)
+        number >= 10_000.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 9_000.0 && number < 9_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 8_000.0 && number < 8_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 7_000.0 && number < 7_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 6_000.0 && number < 6_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 5_000.0 && number < 5_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 4_000.0 && number < 4_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 3_000.0 && number < 3_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 2_000.0 && number < 2_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 1_000.0 && number < 1_100.0 -> String.format("%.0fK", floor(number / delThousand))
+        number >= 1_100.0 -> String.format("%.1fK", floor((number * 10) / delThousand) / 10)
 
         else -> String.format("%.0f", number)
     }
