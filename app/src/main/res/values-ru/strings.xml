@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">НМедиа</string>
     <string name="nmedia">НМедиа</string>
-    <string name="likeCount">0</string>
-    <string name="shareCount">0</string>
+    <string name="likes">0</string>
+    <string name="shared">0</string>
     <string name="visibilityText">0</string>
 
 </resources>
