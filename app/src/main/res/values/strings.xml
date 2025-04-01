@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">NMedia</string>
     <string name="nmedia">NMedia</string>
-    <string name="likeCount">0</string>
-    <string name="shareCount">0</string>
+    <string name="likes" translatable="false">0</string>
+    <string name="shared" translatable="false">0</string>
     <string name="visibilityText">0</string>
     <string name="id" translatable="false">1</string>
     <string name="author" translatable="false">Нетология. Университет интернет-профессий будущего</string>
